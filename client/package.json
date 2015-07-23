@@ -4,7 +4,8 @@
   "description": "A site for artists. ",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack-dev-server --hot --inline"
   },
   "author": "Mike Bradley, Tiff Zhang",
   "license": "CPAL",
