@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "webpack-dev-server --hot --inline"
+    "start": "webpack-dev-server --hot --inline & webpack --watch"
   },
   "author": "Mike Bradley, Tiff Zhang",
   "license": "CPAL",
@@ -19,6 +19,10 @@
     "webpack-dev-server": "^1.10.1"
   },
   "dependencies": {
-    "react": "^0.13.3"
+    "css-loader": "^0.15.5",
+    "node-sass": "^3.2.0",
+    "react": "^0.13.3",
+    "sass-loader": "^1.0.3",
+    "style-loader": "^0.12.3"
   }
 }

@@ -1,0 +1,29 @@
+@-moz-keyframes glowpulse {
+  0% {
+    text-shadow: -1px 1px 8px #ECEB72, 1px -1px 8px #fff;
+  } 50% {
+    text-shadow: -1px 1px 1px #ECEB72, 1px -1px 1px #fff;
+  } 100% {
+    text-shadow: -1px 1px 8px #ECEB72, 1px -1px 8px #fff;
+  }
+}
+
+@-webkit-keyframes glowpulse {
+  0% {
+    text-shadow: -1px 1px 8px #ECEB72, 1px -1px 8px #fff;
+  } 50% {
+    text-shadow: -1px 1px 20px #ECEB72, 1px -1px 20px #fff;
+  } 100% {
+    text-shadow: -1px 1px 8px #ECEB72, 1px -1px 8px #fff;
+  }
+}
+
+@keyframes glowpulse {
+  0% {
+    text-shadow: -1px 1px 8px #ECEB72, 1px -1px 8px #fff;
+  } 50% {
+    text-shadow: -1px 1px 1px #ECEB72, 1px -1px 1px #fff;
+  } 100% {
+    text-shadow: -1px 1px 8px #ECEB72, 1px -1px 8px #fff;
+  }
+}
