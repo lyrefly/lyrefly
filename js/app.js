@@ -57,6 +57,8 @@
 	__webpack_require__(157);
 	__webpack_require__(161);
 
+	__webpack_require__(163);
+
 	console.log('Test');
 
 	/* REACT HOT LOADER */ }).call(this); if (false) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = require("/home/tiff/lampstack-5.4.32-0/apache2/htdocs/lyrefly/node_modules/react-hot-loader/makeExportsHot.js"), foundReactClasses = false; if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "main.js" + ": " + err.message); } }); } } })(); }
@@ -20792,10 +20794,32 @@
 
 
 	// module
-	exports.push([module.id, "html {\n  width: 100%;\n  height: 100%;\n  margin: 0px;\n  padding: 0px;\n  word-wrap: break-word; }\n\nbody {\n  color: #222;\n  font-size: 16px;\n  line-height: 22px;\n  width: 100%;\n  height: 100%;\n  margin: 0px;\n  padding: 0px;\n  font-family: Arial, 'san serif';\n  background: #2F336A; }\n\nimg {\n  border: 0px; }\n\np {\n  display: block;\n  font-size: 1em;\n  margin: 1em 0px;\n  padding: 0px; }\n\na, a:active, a:link, a:visited {\n  text-decoration: none;\n  color: #132DE5; }\n\na:hover {\n  text-decoration: underline; }\n\nbutton, input[type=\"submit\"] {\n  cursor: pointer;\n  border-radius: 10px;\n  border: 0px;\n  transition: background 0.15s ease-in-out;\n  -moz-transition: background 0.15s ease-in-out;\n  -webkit-transition: background 0.15s ease-in-out; }\n\nbutton:focus, input[type=\"submit\"]:focus {\n  border: none;\n  outline: none; }\n\n#header {\n  top: 0;\n  position: fixed;\n  width: 100%;\n  background: #050D45;\n  height: 50px;\n  box-sizing: border-box;\n  padding: 0 5%;\n  color: #fff; }\n\n#header h1 {\n  font-weight: normal;\n  display: block;\n  height: 50px;\n  float: left;\n  color: #fff;\n  font-family: \"Open Sans\";\n  text-transform: lowercase;\n  margin: 0;\n  padding: 0;\n  line-height: 50px;\n  font-size: 28px;\n  letter-spacing: 1px; }\n\n#header h1 strong {\n  font-weight: bold; }\n\n#header a, #header a:active, #header a:link, #header a:visited {\n  text-decoration: none;\n  color: #fff;\n  text-shadow: none;\n  outline: 0 none;\n  -webkit-transition: 500ms linear 0s;\n  -moz-transition: 500ms linear 0s;\n  -o-transition: 500ms linear 0s;\n  transition: 500ms linear 0s; }\n\n#header a:hover {\n  -webkit-animation-delay: 1s;\n  animation-delay: 1s;\n  text-decoration: none;\n  -moz-animation-name: glowpulse;\n  -webkit-animation-name: glowpulse;\n  animation-name: glowpulse;\n  -moz-animation-duration: 3s;\n  -webkit-animation-duration: 3s;\n  animation-duration: 3s;\n  -moz-animation-iteration-count: infinite;\n  -webkit-animation-iteration-count: infinite;\n  animation-iteration-count: infinite;\n  text-shadow: -1px 1px 8px #ECEB72, 1px -1px 8px #fff; }\n\n#container {\n  margin-top: 50px; }\n\n.container {\n  width: 100%;\n  margin: auto; }\n\n.clearfix {\n  height: 1px;\n  float: left;\n  clear: both; }\n", ""]);
+	exports.push([module.id, "html {\n  width: 100%;\n  height: 100%;\n  margin: 0px;\n  padding: 0px;\n  word-wrap: break-word; }\n\nbody {\n  color: #222;\n  font-size: 16px;\n  line-height: 22px;\n  width: 100%;\n  height: 100%;\n  margin: 0px;\n  padding: 0px;\n  font-family: Arial, 'san serif';\n  background: #2F336A; }\n\nimg {\n  border: 0px; }\n\np {\n  display: block;\n  font-size: 1em;\n  margin: 1em 0px;\n  padding: 0px; }\n\na, a:active, a:link, a:visited {\n  text-decoration: none;\n  color: #132DE5; }\n\na:hover {\n  text-decoration: underline; }\n\nbutton, input[type=\"submit\"] {\n  cursor: pointer;\n  border-radius: 10px;\n  border: 0px;\n  transition: background 0.15s ease-in-out;\n  -moz-transition: background 0.15s ease-in-out;\n  -webkit-transition: background 0.15s ease-in-out; }\n\nbutton:focus, input[type=\"submit\"]:focus {\n  border: none;\n  outline: none; }\n\n#header {\n  top: 0;\n  position: fixed;\n  width: 100%;\n  background: #050D45;\n  height: 50px;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  padding: 0 5%;\n  color: #fff;\n  line-height: 50px; }\n\n#header h1 {\n  font-weight: normal;\n  display: block;\n  height: 50px;\n  float: left;\n  color: #fff;\n  font-family: Allerta;\n  text-transform: lowercase;\n  margin: 0;\n  padding: 0;\n  font-size: 25px;\n  letter-spacing: 0.5px; }\n\n#header h1 strong {\n  font-weight: bold; }\n\n#header a, #header a:active, #header a:link, #header a:visited {\n  text-decoration: none;\n  color: #fff;\n  text-shadow: none;\n  outline: 0 none;\n  -webkit-transition: 500ms linear 0s;\n  -moz-transition: 500ms linear 0s;\n  -o-transition: 500ms linear 0s;\n  transition: 500ms linear 0s; }\n\n#header a:hover {\n  -webkit-animation-delay: 1s;\n  animation-delay: 1s;\n  text-decoration: none;\n  -moz-animation-name: glowpulse;\n  -webkit-animation-name: glowpulse;\n  animation-name: glowpulse;\n  -moz-animation-duration: 3s;\n  -webkit-animation-duration: 3s;\n  animation-duration: 3s;\n  -moz-animation-iteration-count: infinite;\n  -webkit-animation-iteration-count: infinite;\n  animation-iteration-count: infinite;\n  text-shadow: -1px 1px 8px #ECEB72, 1px -1px 8px #fff; }\n\n#container {\n  margin-top: 50px; }\n\n.container {\n  width: 100%;\n  margin: auto; }\n\n.clearfix {\n  height: 1px;\n  float: left;\n  clear: both; }\n", ""]);
 
 	// exports
 
+
+/***/ },
+/* 163 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/tiff/lampstack-5.4.32-0/apache2/htdocs/lyrefly/node_modules/react-hot-loader/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/tiff/lampstack-5.4.32-0/apache2/htdocs/lyrefly/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
+
+	"use strict";
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	_react2["default"].render(_react2["default"].createElement(
+	  "h1",
+	  null,
+	  "Hello, world!mkdffsddj"
+	), document.getElementById("example"));
+
+	/* REACT HOT LOADER */ }).call(this); if (false) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = require("/home/tiff/lampstack-5.4.32-0/apache2/htdocs/lyrefly/node_modules/react-hot-loader/makeExportsHot.js"), foundReactClasses = false; if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "dropdown.js" + ": " + err.message); } }); } } })(); }
 
 /***/ }
 /******/ ]);

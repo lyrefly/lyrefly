@@ -8,7 +8,8 @@
   <meta name="description" content="Tiff's Template">
   <meta name="author" content="Tiff Zhang">
 
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href='//fonts.googleapis.com/css?family=Allerta' rel='stylesheet' type='text/css'>
   <script src="js/app.js"></script>
 
   <!--[if lt IE 9]>
@@ -19,9 +20,20 @@
 <body>
 <div id="header">
   <h1><a href="/">Lyre<strong>fly</strong></a></h1>
+  <input type="text" name="search" placeholder="Search..." />
+  <i class="fa fa-search"></i>
+  <a href="/login" class="drop_down_link" data-target="#login_menu">Login</a>
+  <div id="login_menu">
+    <input type="text" name="username" placeholder="Username or Email" />
+    <input type="password" name="password" placeholder="Password" />
+  </div>
+  <a href="/register" class="drop_down_link" data-target="#register_menu">Register</a>
+  <div id="register_menu">
+    <input type="text" name="username" placeholder="Username or Email" />
+    <input type="password" name="password" placeholder="Password" />
+  </div>
 </div>
 <div id="container">
-
 </div>
 <div class="clearfix"></div>
 </body>

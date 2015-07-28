@@ -58,9 +58,11 @@ button:focus, input[type="submit"]:focus {
 	width: 100%;
 	background: #050D45;
 	height: 50px;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	padding: 0 5%;
 	color: #fff;
+	line-height: 50px;
 }
 
 #header h1 {
@@ -69,13 +71,12 @@ button:focus, input[type="submit"]:focus {
 	height: 50px;
 	float: left;
 	color: #fff;
-	font-family: "Open Sans";
+	font-family: Allerta;
 	text-transform: lowercase;
 	margin: 0;
 	padding: 0;
-	line-height: 50px;
-	font-size: 28px;
-	letter-spacing: 1px;
+	font-size: 25px;
+	letter-spacing: 0.5px;
 }
 
 #header h1 strong {
