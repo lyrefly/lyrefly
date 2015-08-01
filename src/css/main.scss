@@ -52,6 +52,21 @@ button:focus, input[type="submit"]:focus {
 	outline:none;
 }
 
+.invisible {
+	display: none;
+	visibility: hidden;
+}
+
+.left {
+	float: left;
+	text-align: left;
+}
+
+.right {
+	float: right;
+	text-align: right;
+}
+
 #header {
 	top: 0;
 	position: fixed;

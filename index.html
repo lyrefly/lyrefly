@@ -20,17 +20,23 @@
 <body>
 <div id="header">
   <h1><a href="/">Lyre<strong>fly</strong></a></h1>
-  <input type="text" name="search" placeholder="Search..." />
-  <i class="fa fa-search"></i>
-  <a href="/login" class="drop_down_link" data-target="#login_menu">Login</a>
-  <div id="login_menu">
-    <input type="text" name="username" placeholder="Username or Email" />
-    <input type="password" name="password" placeholder="Password" />
+  <form action="/search" method="get" class="left">
+    <input type="text" name="search" placeholder="Search..." />
+    <button><i class="fa fa-search"></i></button>
+  </form>
+  <div class="drop_down">
+    <a href="/login">Login</a>
+    <div class="drop_down_menu" id="login_menu">
+      <input type="text" name="username" placeholder="Username or Email" />
+      <input type="password" name="password" placeholder="Password" />
+    </div>
   </div>
-  <a href="/register" class="drop_down_link" data-target="#register_menu">Register</a>
-  <div id="register_menu">
-    <input type="text" name="username" placeholder="Username or Email" />
-    <input type="password" name="password" placeholder="Password" />
+  <div class="drop_down">
+    <a href="/register" data-target="#register_menu">Register</a>
+    <div class="drop_down_menu" id="register_menu">
+      <input type="text" name="username" placeholder="Username or Email" />
+      <input type="password" name="password" placeholder="Password" />
+    </div>
   </div>
 </div>
 <div id="container">
