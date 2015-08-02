@@ -6,6 +6,7 @@
       animationClass: "fadein",
       hasCloseButton: true,
       content: "",
+      title: null,
       target: null,
       maxWidth: 800,
       minWidth: 200,

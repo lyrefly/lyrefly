@@ -2,15 +2,27 @@
 
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
+  <meta name="description" content="Tiff's Template" />
+  <meta name="author" content="Tiff Zhang" />
 
-  <title>Lyrefly - An artists' community</title>
-  <meta name="description" content="Tiff's Template">
-  <meta name="author" content="Tiff Zhang">
+  <title>Lyrefly - Your local art community</title>
 
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link href='//fonts.googleapis.com/css?family=Allerta' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+  <link href='//fonts.googleapis.com/css?family=Allerta' rel='stylesheet' type='text/css' />
   <script src="js/app.js"></script>
+
+  <!-- jQuery -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+  <!-- jQuery ScrollTo Plugin -->
+  <script src="//balupton.github.io/jquery-scrollto/lib/jquery-scrollto.js"></script>
+
+  <!-- History.js -->
+  <script src="//browserstate.github.io/history.js/scripts/bundled/html4+html5/jquery.history.js"></script>
+
+  <!-- Ajaxify -->
+  <script src="//rawgithub.com/browserstate/ajaxify/master/ajaxify-html5.js"></script>
 
   <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -21,13 +33,13 @@
 <div id="header">
   <h1><a href="/">Lyre<strong>fly</strong></a></h1>
   <form action="/search" method="get" class="left">
-    <input type="text" name="q" placeholder="Search..." />
+    <input type="text" name="q" placeholder="Search..." class="search" />
     <button><i class="fa fa-search"></i></button>
   </form>
   <div class="drop_down">
-    <a href="/login">Login</a>
+    <a href="/login.html">Login</a>
     <div class="drop_down_menu" id="login_menu">
-      <form action="/login" method="post">
+      <form action="/login.html" method="post">
         <input type="text" name="username" placeholder="Username or Email" />
         <input type="password" name="password" placeholder="Password" />
         <input type="text" class="invisible" name="captcha" placeholder="captcha" />
@@ -36,9 +48,9 @@
     </div>
   </div>
   <div class="drop_down">
-    <a href="/register">Register</a>
+    <a href="/register.html">Register</a>
     <div class="drop_down_menu" id="register_menu">
-      <form action="/register" method="post">
+      <form action="/register.html" method="post">
         <input type="text" name="username" placeholder="Username" />
         <input type="text" name="email" placeholder="Email" />
         <input type="password" name="password" placeholder="Password" />
