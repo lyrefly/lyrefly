@@ -21,21 +21,31 @@
 <div id="header">
   <h1><a href="/">Lyre<strong>fly</strong></a></h1>
   <form action="/search" method="get" class="left">
-    <input type="text" name="search" placeholder="Search..." />
+    <input type="text" name="q" placeholder="Search..." />
     <button><i class="fa fa-search"></i></button>
   </form>
   <div class="drop_down">
     <a href="/login">Login</a>
     <div class="drop_down_menu" id="login_menu">
-      <input type="text" name="username" placeholder="Username or Email" />
-      <input type="password" name="password" placeholder="Password" />
+      <form action="/login" method="post">
+        <input type="text" name="username" placeholder="Username or Email" />
+        <input type="password" name="password" placeholder="Password" />
+        <input type="text" class="invisible" name="captcha" placeholder="captcha" />
+        <button>Login</button>
+      </form>
     </div>
   </div>
   <div class="drop_down">
-    <a href="/register" data-target="#register_menu">Register</a>
+    <a href="/register">Register</a>
     <div class="drop_down_menu" id="register_menu">
-      <input type="text" name="username" placeholder="Username or Email" />
-      <input type="password" name="password" placeholder="Password" />
+      <form action="/register" method="post">
+        <input type="text" name="username" placeholder="Username" />
+        <input type="text" name="email" placeholder="Email" />
+        <input type="password" name="password" placeholder="Password" />
+        <input type="password" name="password2" placeholder="Verify Password" />
+        <input type="text" class="invisible" name="captcha" placeholder="captcha" />
+        <button>Register</button>
+      </form>
     </div>
   </div>
 </div>

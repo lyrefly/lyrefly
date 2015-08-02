@@ -38,18 +38,45 @@ a:hover {
 	text-decoration: underline;
 }
 
+input {
+	border: 1px solid #bbb;
+	box-shadow: none;
+	background: #fff;
+	padding: 3px 5px;
+}
+
+input:focus {
+	outline-color: #FF9900;
+}
+
 button, input[type="submit"] {
 	cursor: pointer;
 	border-radius: 10px;
-	border: 0px;
-	transition: background .15s ease-in-out;
-  -moz-transition: background .15s ease-in-out;
-  -webkit-transition: background .15s ease-in-out;
+	font-size: 1em;
+	padding: 5px 10px;
+	background: #DADAE6;
+	border: 1px solid #DADAE6;
+	transition: background .3s ease-in-out;
+  -moz-transition: background .3s ease-in-out;
+  -webkit-transition: background .3s ease-in-out;
+}
+
+button:hover, input[type="submit"]:hover {
+	background: #7070B8;
+	border: 1px solid #7070B8;
 }
 
 button:focus, input[type="submit"]:focus {
-	border: none;
-	outline:none;
+	border: 1px solid #FF9900;
+	outline: none;
+}
+
+.fadein {
+	-webkit-animation: fadein 1s;
+	-moz-animation: fadein 1s;
+	-ms-animation: fadein 1s;
+	-o-animation: fadein 1s;
+	animation: fadein 1s;
 }
 
 .invisible {
