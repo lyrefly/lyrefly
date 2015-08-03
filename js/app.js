@@ -59,9 +59,20 @@
 	__webpack_require__(161);
 	__webpack_require__(164);
 
+	__webpack_require__(169);
 	__webpack_require__(168);
 
-	console.log('Test');
+	window.onload = function () {
+	  var loginModal = new Modal({
+	    'content': document.getElementById('login_menu'),
+	    'linkSelector': '.trigger-login'
+	  });
+
+	  var registerModal = new Modal({
+	    'content': document.getElementById('register_menu'),
+	    'linkSelector': '.trigger-register'
+	  });
+	};
 
 	/* REACT HOT LOADER */ }).call(this); if (false) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = require("/home/tiff/lampstack-5.4.32-0/apache2/htdocs/lyrefly/node_modules/react-hot-loader/makeExportsHot.js"), foundReactClasses = false; if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "main.js" + ": " + err.message); } }); } } })(); }
 
@@ -20796,7 +20807,7 @@
 
 
 	// module
-	exports.push([module.id, ".fadein {\n  -webkit-animation: fadein 1s;\n  -moz-animation: fadein 1s;\n  -ms-animation: fadein 1s;\n  -o-animation: fadein 1s;\n  animation: fadein 1s; }\n\n.invisible {\n  display: none;\n  visibility: hidden; }\n\n.left {\n  float: left;\n  text-align: left; }\n\n.right {\n  float: right;\n  text-align: right; }\n\n#header {\n  top: 0;\n  position: fixed;\n  width: 100%;\n  background: #050D45;\n  height: 50px;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  padding: 0 5%;\n  color: #fff;\n  line-height: 50px; }\n\n#header .search {\n  -webkit-transition: 200ms linear 0s;\n  -moz-transition: 200ms linear 0s;\n  -o-transition: 200ms linear 0s;\n  transition: 200ms linear 0s;\n  background: #63668F;\n  border: none; }\n\n#header .search:focus {\n  background: #fff;\n  outline: none;\n  box-shadow: -1px 1px 8px #ECEB72, 1px -1px 8px #fff; }\n\n#header h1 {\n  font-weight: normal;\n  display: block;\n  height: 50px;\n  float: left;\n  color: #fff;\n  font-family: Allerta;\n  text-transform: lowercase;\n  margin: 0;\n  padding: 0;\n  font-size: 25px;\n  letter-spacing: 0.5px; }\n\n#header h1 strong {\n  font-weight: bold; }\n\n#header a, #header a:active, #header a:link, #header a:visited {\n  text-decoration: none;\n  color: #fff;\n  text-shadow: none;\n  outline: 0 none;\n  -webkit-transition: 500ms linear 0s;\n  -moz-transition: 500ms linear 0s;\n  -o-transition: 500ms linear 0s;\n  transition: 500ms linear 0s; }\n\n#header a:hover {\n  -webkit-animation-delay: 1s;\n  animation-delay: 1s;\n  text-decoration: none;\n  -moz-animation-name: glowpulse;\n  -webkit-animation-name: glowpulse;\n  animation-name: glowpulse;\n  -moz-animation-duration: 3s;\n  -webkit-animation-duration: 3s;\n  animation-duration: 3s;\n  -moz-animation-iteration-count: infinite;\n  -webkit-animation-iteration-count: infinite;\n  animation-iteration-count: infinite;\n  text-shadow: -1px 1px 8px #ECEB72, 1px -1px 8px #fff; }\n\n#container {\n  margin-top: 50px; }\n\n.container {\n  width: 100%;\n  margin: auto; }\n\n.clearfix {\n  height: 1px;\n  float: left;\n  clear: both; }\n", ""]);
+	exports.push([module.id, ".fadein {\n  -webkit-animation: fadein 1s;\n  -moz-animation: fadein 1s;\n  -ms-animation: fadein 1s;\n  -o-animation: fadein 1s;\n  animation: fadein 1s; }\n\n.invisible {\n  display: none;\n  visibility: hidden; }\n\n.left {\n  float: left;\n  text-align: left; }\n\n.right {\n  float: right;\n  text-align: right; }\n\n#header {\n  top: 0;\n  position: fixed;\n  width: 100%;\n  background: #050D45;\n  height: 50px;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  padding: 0 5%;\n  color: #fff;\n  line-height: 50px; }\n\n#header .search {\n  -webkit-transition: 200ms linear 0s;\n  -moz-transition: 200ms linear 0s;\n  -o-transition: 200ms linear 0s;\n  transition: 200ms linear 0s;\n  background: #63668F;\n  border: none; }\n\n#header .search:focus {\n  background: #fff;\n  outline: none;\n  box-shadow: -1px 1px 8px #ECEB72, 1px -1px 8px #fff; }\n\n#header h1 {\n  font-weight: normal;\n  display: block;\n  height: 50px;\n  float: left;\n  color: #fff;\n  font-family: Allerta;\n  text-transform: lowercase;\n  margin: 0;\n  padding: 0;\n  font-size: 25px;\n  letter-spacing: 0.5px; }\n\n#header h1 strong {\n  font-weight: bold; }\n\n#header a, #header a:active, #header a:link, #header a:visited {\n  text-decoration: none;\n  color: #fff;\n  text-shadow: none;\n  outline: 0 none;\n  -webkit-transition: 500ms linear 0s;\n  -moz-transition: 500ms linear 0s;\n  -o-transition: 500ms linear 0s;\n  transition: 500ms linear 0s; }\n\n#header a:hover {\n  -webkit-animation-delay: 1s;\n  animation-delay: 1s;\n  text-decoration: none;\n  -moz-animation-name: glowpulse;\n  -webkit-animation-name: glowpulse;\n  animation-name: glowpulse;\n  -moz-animation-duration: 3s;\n  -webkit-animation-duration: 3s;\n  animation-duration: 3s;\n  -moz-animation-iteration-count: infinite;\n  -webkit-animation-iteration-count: infinite;\n  animation-iteration-count: infinite;\n  text-shadow: -1px 1px 8px #ECEB72, 1px -1px 8px #fff; }\n\n.container {\n  width: 90%;\n  margin: 10px 5%;\n  min-height: 500px; }\n\n.clearfix {\n  height: 1px;\n  float: left;\n  clear: both; }\n", ""]);
 
 	// exports
 
@@ -20837,7 +20848,7 @@
 
 
 	// module
-	exports.push([module.id, ".drop_down {\n  cursor: pointer;\n  display: block;\n  position: inline;\n  float: left;\n  padding: 0 8px;\n  transition: background 0.5s ease-in-out;\n  -moz-transition: background 0.5s ease-in-out;\n  -webkit-transition: background 0.5s ease-in-out; }\n\n.drop_down .drop_down_menu {\n  display: none;\n  position: absolute;\n  margin-top: -5px;\n  margin-left: -8px;\n  width: 200px;\n  min-height: 50px;\n  background: #fff;\n  opacity: 0;\n  padding: 5px; }\n\n.drop_down:hover {\n  background: #010419; }\n\n.drop_down:hover .drop_down_menu {\n  display: block;\n  opacity: 1;\n  -webkit-animation: fadein 1s;\n  -moz-animation: fadein 1s;\n  -ms-animation: fadein 1s;\n  -o-animation: fadein 1s;\n  animation: fadein 1s; }\n", ""]);
+	exports.push([module.id, ".drop_down {\n  cursor: pointer;\n  display: block;\n  position: inline;\n  float: left;\n  padding: 0 8px;\n  transition: background 0.5s ease-in-out;\n  -moz-transition: background 0.5s ease-in-out;\n  -webkit-transition: background 0.5s ease-in-out; }\n\n.drop_down .drop_down_menu {\n  display: none;\n  position: absolute;\n  margin-top: -5px;\n  margin-left: -8px;\n  width: 200px;\n  min-height: 50px;\n  background: #fff;\n  opacity: 0;\n  padding: 5px; }\n\n.drop_down:hover {\n  background: #010419; }\n\n.drop_down:hover .drop_down_menu {\n  display: block;\n  opacity: 1;\n  -webkit-animation: fadein 1s;\n  -moz-animation: fadein 1s;\n  -ms-animation: fadein 1s;\n  -o-animation: fadein 1s;\n  animation: fadein 1s; }\n\n.drop_down a {\n  display: block;\n  width: 100%;\n  height: 100%; }\n", ""]);
 
 	// exports
 
@@ -20877,7 +20888,7 @@
 
 
 	// module
-	exports.push([module.id, "html {\n  width: 100%;\n  height: 100%;\n  margin: 0px;\n  padding: 0px;\n  word-wrap: break-word; }\n\nbody {\n  color: #222;\n  font-size: 16px;\n  line-height: 22px;\n  width: 100%;\n  height: 100%;\n  margin: 0px;\n  padding: 0px;\n  font-family: Arial, 'san serif';\n  background: #2F336A; }\n\nimg {\n  border: 0px; }\n\np {\n  display: block;\n  font-size: 1em;\n  margin: 1em 0px;\n  padding: 0px; }\n\na, a:active, a:link, a:visited {\n  text-decoration: none;\n  color: #132DE5; }\n\na:hover {\n  text-decoration: underline; }\n\ninput {\n  border: 1px solid #bbb;\n  box-shadow: none;\n  background: #fff;\n  padding: 3px 5px; }\n\ninput:focus {\n  outline-color: #FF9900; }\n\nbutton, input[type=\"submit\"] {\n  cursor: pointer;\n  border-radius: 10px;\n  font-size: 1em;\n  padding: 5px 10px;\n  background: #DADAE6;\n  border: 1px solid #DADAE6;\n  transition: .3s ease-in-out;\n  -moz-transition: .3s ease-in-out;\n  -webkit-transition: .3s ease-in-out; }\n\nbutton:hover, input[type=\"submit\"]:hover {\n  background: #7070B8;\n  border: 1px solid #7070B8; }\n\nbutton:focus, input[type=\"submit\"]:focus {\n  border: 1px solid #FF9900;\n  outline: none; }\n\n*::-webkit-input-placeholder {\n  color: #B0B0BB; }\n\n*:-moz-placeholder {\n  /* FF 4-18 */\n  color: #B0B0BB; }\n\n*::-moz-placeholder {\n  /* FF 19+ */\n  color: #B0B0BB; }\n\n*:-ms-input-placeholder {\n  /* IE 10+ */\n  color: #B0B0BB; }\n", ""]);
+	exports.push([module.id, "html {\n  width: 100%;\n  height: 100%;\n  margin: 0px;\n  padding: 0px;\n  word-wrap: break-word; }\n\nbody {\n  color: #222;\n  font-size: 16px;\n  line-height: 22px;\n  width: 100%;\n  height: 100%;\n  margin: 0px;\n  padding: 0px;\n  font-family: Arial, 'san serif';\n  background: #2F336A;\n  padding-top: 50px; }\n\nimg {\n  border: 0px; }\n\np {\n  display: block;\n  font-size: 1em;\n  margin: 1em 0px;\n  padding: 0px; }\n\na, a:active, a:link, a:visited {\n  text-decoration: none;\n  color: #132DE5; }\n\na:hover {\n  text-decoration: underline; }\n\ninput {\n  border: 1px solid #bbb;\n  box-shadow: none;\n  background: #fff;\n  padding: 3px 5px; }\n\ninput:focus {\n  outline-color: #FF9900; }\n\nbutton, input[type=\"submit\"] {\n  cursor: pointer;\n  border-radius: 10px;\n  font-size: 1em;\n  padding: 5px 10px;\n  background: #DADAE6;\n  border: 1px solid #DADAE6;\n  transition: .3s ease-in-out;\n  -moz-transition: .3s ease-in-out;\n  -webkit-transition: .3s ease-in-out; }\n\nbutton:hover, input[type=\"submit\"]:hover {\n  background: #7070B8;\n  border: 1px solid #7070B8; }\n\nbutton:focus, input[type=\"submit\"]:focus {\n  border: 1px solid #FF9900;\n  outline: none; }\n\n*::-webkit-input-placeholder {\n  color: #B0B0BB; }\n\n*:-moz-placeholder {\n  /* FF 4-18 */\n  color: #B0B0BB; }\n\n*::-moz-placeholder {\n  /* FF 19+ */\n  color: #B0B0BB; }\n\n*:-ms-input-placeholder {\n  /* IE 10+ */\n  color: #B0B0BB; }\n", ""]);
 
 	// exports
 
@@ -20890,35 +20901,159 @@
 
 	"use strict";
 
-	(function () {
+	(function (g) {
+	  g.Modal = function (modalSettings) {
+	    // A reference to the modal in the dom
+	    this.modal = null;
+	    this.overlay = null;
+	    this.closeButton = null;
 
-	  this.Modal = function (options) {
 	    // Initialized to all of the defaults for this thing!
-	    var settings = {
-	      animationClass: "fadein",
+	    this.settings = {
+	      className: "fadein",
 	      hasCloseButton: true,
 	      content: "",
 	      title: null,
-	      target: null,
 	      maxWidth: 800,
 	      minWidth: 200,
 	      hasOverlay: true,
-	      isFixed: true
+	      isFixed: true,
+	      linkSelector: null
 	    };
 
-	    if (options && typeof options === "object") {
-	      for (key in settings) {
-	        if (options.hasOwnProperty(key)) {
-	          settings[key] = options[key];
+	    var self = this;
+
+	    if (modalSettings && typeof modalSettings === "object") {
+	      for (var key in this.settings) {
+	        if (modalSettings.hasOwnProperty(key)) {
+	          this.settings[key] = modalSettings[key];
 	        }
+	      }
+	    }
+
+	    var content = this.settings.content;
+	    if (content && content.innerHTML) {
+	      content = content.innerHTML;
+	      removeElement(this.settings.content);
+	      this.settings.content = content;
+	    }
+
+	    if (this.settings.linkSelector !== null) {
+	      var links = document.querySelectorAll(this.settings.linkSelector);
+
+	      for (var i = 0; i < links.length; i++) {
+	        if (links[i].href) {
+	          links[i].href = "#";
+	        }
+	        links[i].addEventListener("click", function (e) {
+	          e.preventDefault();
+	          self.open();
+	        });
 	      }
 	    }
 	  };
 
-	  Modal.prototype.open = function () {};
-	})();
+	  Modal.prototype.open = function () {
+	    buildModal.call(this);
+
+	    initializeEvents.call(this);
+
+	    // For animations
+	    window.getComputedStyle(this.modal).height;
+
+	    this.modal.className += this.modal.offsetHeight > window.innerHeight ? " modal-active modal-anchored" : " modal-active";
+	    this.overlay.className += " modal-active";
+	  };
+
+	  Modal.prototype.close = function () {
+	    var self = this;
+
+	    this.modal.className = this.modal.className.replace(" modal-open", "");
+	    this.overlay.className = this.overlay.className.replace(" modal-open", "");
+
+	    this.modal.addEventListener(transitionEnd(), removeElement.bind(null, this.modal));
+
+	    this.overlay.addEventListener(transitionEnd(), removeElement.bind(null, this.overlay));
+	  };
+
+	  function buildModal() {
+	    var fragment = document.createDocumentFragment();
+	    this.modal = document.createElement("div");
+	    this.modal.className = "modal " + this.settings.className;
+	    this.modal.style.minWidth = this.settings.minWidth + "px";
+	    this.modal.style.maxWidth = this.settings.maxWidth + "px";
+
+	    if (this.settings.hasCloseButton === true) {
+	      this.closeButton = document.createElement("button");
+	      this.closeButton.className = "modal-close modal-close-button";
+	      this.closeButton.innerHTML = "×";
+	      this.modal.appendChild(this.closeButton);
+	    }
+
+	    if (this.settings.hasOverlay === true) {
+	      this.overlay = document.createElement("div");
+	      this.overlay.className = "modal-overlay " + this.settings.className;
+	      fragment.appendChild(this.overlay);
+	    }
+
+	    if (this.settings.title !== null) {
+	      var title = document.createElement("h2");
+	      title.className = "modal-title";
+	      title.innerHTML = this.settings.title;
+	      this.modal.appendChild(title);
+	    }
+
+	    var content = document.createElement("div");
+	    content.className = "modal-content";
+	    content.innerHTML = this.settings.content;
+	    this.modal.appendChild(content);
+
+	    fragment.appendChild(this.modal);
+
+	    document.body.appendChild(fragment);
+	  }
+
+	  function initializeEvents() {
+	    if (this.closeButton) {
+	      this.closeButton.addEventListener("click", this.close.bind(this));
+	    }
+
+	    if (this.overlay) {
+	      this.overlay.addEventListener("click", this.close.bind(this));
+	    }
+	  }
+
+	  function transitionEnd() {
+	    var el = document.createElement("div");
+	    if (el.style.WebkitTransition) return "webkitTransitionEnd";
+	    if (el.style.OTransition) return "oTransitionEnd";
+	    return "transitionend";
+	  }
+
+	  function removeElement(obj) {
+	    if (obj.parentElement) {
+	      obj.parentElement.removeChild(obj);
+	    }
+	  }
+	})(window);
 
 	/* REACT HOT LOADER */ }).call(this); if (false) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = require("/home/tiff/lampstack-5.4.32-0/apache2/htdocs/lyrefly/node_modules/react-hot-loader/makeExportsHot.js"), foundReactClasses = false; if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "modal.js" + ": " + err.message); } }); } } })(); }
+
+/***/ },
+/* 169 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/tiff/lampstack-5.4.32-0/apache2/htdocs/lyrefly/node_modules/react-hot-loader/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/tiff/lampstack-5.4.32-0/apache2/htdocs/lyrefly/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
+
+	'use strict';
+
+	if (typeof Array.isArray === 'undefined') {
+	  Array.isArray = function (obj) {
+	    return Object.prototype.toString.call(obj) === '[object Array]';
+	  };
+	};
+
+	/* REACT HOT LOADER */ }).call(this); if (false) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = require("/home/tiff/lampstack-5.4.32-0/apache2/htdocs/lyrefly/node_modules/react-hot-loader/makeExportsHot.js"), foundReactClasses = false; if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "functions.js" + ": " + err.message); } }); } } })(); }
 
 /***/ }
 /******/ ]);
