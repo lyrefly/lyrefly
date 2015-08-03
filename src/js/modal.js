@@ -4,6 +4,7 @@
     this.modal = null;
     this.overlay = null;
     this.closeButton = null;
+    this.isOpen = false;
 
     // Initialized to all of the defaults for this thing!
     this.settings = {
@@ -51,6 +52,10 @@
   };
 
   Modal.prototype.open = function () {
+    if (this.isOpen === true) return;
+
+    this.isOpen = true;
+
     buildModal.call(this);
 
     initializeEvents.call(this);
@@ -62,8 +67,9 @@
       " modal-active modal-anchored" : " modal-active";
     this.overlay.className += " modal-active";
   };
-
   Modal.prototype.close = function () {
+    this.isOpen = false;
+
     var self = this;
 
     this.modal.className = this.modal.className.replace(" modal-open", "");
