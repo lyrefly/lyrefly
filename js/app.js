@@ -57,6 +57,7 @@
 	__webpack_require__(157);
 	__webpack_require__(166);
 	__webpack_require__(161);
+	__webpack_require__(170);
 	__webpack_require__(164);
 
 	__webpack_require__(169);
@@ -20848,7 +20849,7 @@
 
 
 	// module
-	exports.push([module.id, ".drop_down {\n  cursor: pointer;\n  display: block;\n  position: inline;\n  float: left;\n  padding: 0 8px;\n  transition: background 0.5s ease-in-out;\n  -moz-transition: background 0.5s ease-in-out;\n  -webkit-transition: background 0.5s ease-in-out; }\n\n.drop_down .drop_down_menu {\n  display: none;\n  position: absolute;\n  margin-top: -5px;\n  margin-left: -8px;\n  width: 200px;\n  min-height: 50px;\n  background: #fff;\n  opacity: 0;\n  padding: 5px; }\n\n.drop_down:hover {\n  background: #010419; }\n\n.drop_down:hover .drop_down_menu {\n  display: block;\n  opacity: 1;\n  -webkit-animation: fadein 1s;\n  -moz-animation: fadein 1s;\n  -ms-animation: fadein 1s;\n  -o-animation: fadein 1s;\n  animation: fadein 1s; }\n\n.drop_down a {\n  display: block;\n  width: 100%;\n  height: 100%; }\n", ""]);
+	exports.push([module.id, ".drop_down {\n  cursor: pointer;\n  display: block;\n  position: inline;\n  float: left;\n  padding: 0;\n  transition: background 0.5s ease-in-out;\n  -moz-transition: background 0.5s ease-in-out;\n  -webkit-transition: background 0.5s ease-in-out; }\n\n.drop_down .drop_down_menu {\n  display: none;\n  position: absolute;\n  margin-top: -5px;\n  margin-left: -8px;\n  width: 200px;\n  min-height: 50px;\n  background: #fff;\n  opacity: 0;\n  padding: 5px; }\n\n.drop_down:hover {\n  background: #010419; }\n\n.drop_down:hover .drop_down_menu {\n  display: block;\n  opacity: 1;\n  -webkit-animation: fadein 1s;\n  -moz-animation: fadein 1s;\n  -ms-animation: fadein 1s;\n  -o-animation: fadein 1s;\n  animation: fadein 1s; }\n\n.drop_down a {\n  padding: 0 8px;\n  display: block;\n  height: 100%; }\n", ""]);
 
 	// exports
 
@@ -20907,11 +20908,10 @@
 	    this.modal = null;
 	    this.overlay = null;
 	    this.closeButton = null;
-	    this.isOpen = false;
 
 	    // Initialized to all of the defaults for this thing!
 	    this.settings = {
-	      className: "fadein",
+	      className: "zoom",
 	      hasCloseButton: true,
 	      content: "",
 	      title: null,
@@ -20943,9 +20943,6 @@
 	      var links = document.querySelectorAll(this.settings.linkSelector);
 
 	      for (var i = 0; i < links.length; i++) {
-	        if (links[i].href) {
-	          links[i].href = "#";
-	        }
 	        links[i].addEventListener("click", function (e) {
 	          e.preventDefault();
 	          self.open();
@@ -20955,31 +20952,34 @@
 	  };
 
 	  Modal.prototype.open = function () {
-	    if (this.isOpen === true) return;
-
-	    this.isOpen = true;
-
 	    buildModal.call(this);
-
 	    initializeEvents.call(this);
 
 	    // For animations
 	    window.getComputedStyle(this.modal).height;
 
 	    this.modal.className += this.modal.offsetHeight > window.innerHeight ? " modal-active modal-anchored" : " modal-active";
-	    this.overlay.className += " modal-active";
+	    if (this.overlay) {
+	      this.overlay.className += " modal-active";
+	    }
 	  };
-	  Modal.prototype.close = function () {
-	    this.isOpen = false;
 
+	  Modal.prototype.close = function () {
 	    var self = this;
 
-	    this.modal.className = this.modal.className.replace(" modal-open", "");
-	    this.overlay.className = this.overlay.className.replace(" modal-open", "");
+	    this.modal.className = this.modal.className.replace(" modal-active", "");
 
-	    this.modal.addEventListener(transitionEnd(), removeElement.bind(null, this.modal));
+	    this.modal.addEventListener(transitionEnd(), function () {
+	      removeElement(self.modal);
+	    });
 
-	    this.overlay.addEventListener(transitionEnd(), removeElement.bind(null, this.overlay));
+	    if (this.overlay) {
+	      this.overlay.className = this.overlay.className.replace(" modal-active", "");
+
+	      this.overlay.addEventListener(transitionEnd(), function () {
+	        removeElement(self.overlay);
+	      });
+	    }
 	  };
 
 	  function buildModal() {
@@ -21060,6 +21060,46 @@
 	};
 
 	/* REACT HOT LOADER */ }).call(this); if (false) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = require("/home/tiff/lampstack-5.4.32-0/apache2/htdocs/lyrefly/node_modules/react-hot-loader/makeExportsHot.js"), foundReactClasses = false; if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "functions.js" + ": " + err.message); } }); } } })(); }
+
+/***/ },
+/* 170 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(171);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(160)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./modal.scss", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./modal.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 171 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(159)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".modal-overlay, .modal {\n  -webkit-transition: 1ms opacity ease;\n  -moz-transition: 1ms opacity ease;\n  -ms-transition: 1ms opacity ease;\n  -o-transition: 1ms opacity ease;\n  transition: 1ms opacity ease; }\n\n.modal-overlay.modal-active,\n.modal.modal-active {\n  opacity: 1; }\n\n.modal-overlay {\n  position: fixed;\n  top: 0;\n  left: 0;\n  opacity: 0;\n  width: 100%;\n  height: 100%;\n  background: rgba(0, 0, 0, 0.6); }\n\n.modal {\n  position: absolute;\n  z-index: 9999;\n  top: 50%;\n  left: 50%;\n  opacity: 0;\n  width: 94%;\n  padding: 24px 20px;\n  -webkit-transform: translate(-50%, -50%);\n  -moz-transform: translate(-50%, -50%);\n  -ms-transform: translate(-50%, -50%);\n  -o-transform: translate(-50%, -50%);\n  transform: translate(-50%, -50%);\n  border-radius: 2px;\n  background: #fff; }\n\n.modal.modal-active.modal-anchored {\n  top: 20px;\n  -webkit-transform: translate(-50%, 0);\n  -moz-transform: translate(-50%, 0);\n  -ms-transform: translate(-50%, 0);\n  -o-transform: translate(-50%, 0);\n  transform: translate(-50%, 0); }\n\n.modal-close {\n  font-family: Arial, sans-serif;\n  font-size: 24px;\n  font-weight: 700;\n  line-height: 12px;\n  position: absolute;\n  top: 5px;\n  right: 5px;\n  padding: 5px 7px 7px;\n  cursor: pointer;\n  outline: none;\n  background: #fff;\n  border-color: #fff; }\n\n.modal.fade-and-drop {\n  top: -300%;\n  opacity: 1;\n  display: block; }\n\n.modal.fade-and-drop.modal-active,\n.modal.fade-and-drop.modal-active.modal-anchored {\n  -webkit-transition: 200ms top 200ms ease;\n  -moz-transition: 200ms top 200ms ease;\n  -ms-transition: 200ms top 200ms ease;\n  -o-transition: 200ms top 200ms ease;\n  transition: 200ms top 200ms ease; }\n\n.modal.fade-and-drop.modal-active {\n  top: 50%; }\n\n.modal-overlay.fade-and-drop.modal-active,\n.modal-overlay.zoom.modal-active {\n  top: 0;\n  -webkit-transition: 200ms opacity ease;\n  -moz-transition: 200ms opacity ease;\n  -ms-transition: 200ms opacity ease;\n  -o-transition: 200ms opacity ease;\n  transition: 200ms opacity ease;\n  opacity: 1; }\n\n.modal.fade-and-drop {\n  -webkit-transition: 200ms top ease;\n  -moz-transition: 200ms top ease;\n  -ms-transition: 200ms top ease;\n  -o-transition: 200ms top ease;\n  transition: 200ms top ease; }\n\n.modal-overlay.fade-and-drop,\n.modal-overlay.zoom {\n  display: block;\n  opacity: 0;\n  -webkit-transition: 200ms opacity 200ms ease;\n  -moz-transition: 200ms opacity 200ms ease;\n  -ms-transition: 200ms opacity 200ms ease;\n  -o-transition: 200ms opacity 200ms ease;\n  transition: 200ms opacity 200ms ease; }\n\n.modal.zoom {\n  -webkit-transition: 200ms -webkit-transform ease;\n  -moz-transition: 200ms -moz-transform ease;\n  -ms-transition: 200ms -ms-transform ease;\n  -o-transition: 200ms -o-transform ease;\n  transition: 200ms transform ease;\n  -webkit-transform: translate(-50%, -50%) scale(0);\n  -moz-transform: translate(-50%, -50%) scale(0);\n  -ms-transform: translate(-50%, -50%) scale(0);\n  -o-transform: translate(-50%, -50%) scale(0);\n  transform: translate(-50%, -50%) scale(0);\n  opacity: 1;\n  display: block; }\n\n.modal.zoom.modal-active {\n  -webkit-transition: 200ms -webkit-transform 200ms ease;\n  -moz-transition: 200ms -moz-transform 200ms ease;\n  -ms-transition: 200ms -ms-transform 200ms ease;\n  -o-transition: 200ms -o-transform 200ms ease;\n  transition: 200ms transform 200ms ease;\n  -webkit-transform: translate(-50%, -50%) scale(1);\n  -moz-transform: translate(-50%, -50%) scale(1);\n  -ms-transform: translate(-50%, -50%) scale(1);\n  -o-transform: translate(-50%, -50%) scale(1);\n  transform: translate(-50%, -50%) scale(1); }\n\n.modal.zoom.modal-active.modal-anchored {\n  -webkit-transition: 200ms -webkit-transform 200ms ease;\n  -moz-transition: 200ms -moz-transform 200ms ease;\n  -ms-transition: 200ms -ms-transform 200ms ease;\n  -o-transition: 200ms -o-transform 200ms ease;\n  transition: 200ms transform 200ms ease; }\n", ""]);
+
+	// exports
+
 
 /***/ }
 /******/ ]);

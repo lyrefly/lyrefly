@@ -4,11 +4,10 @@
     this.modal = null;
     this.overlay = null;
     this.closeButton = null;
-    this.isOpen = false;
 
     // Initialized to all of the defaults for this thing!
     this.settings = {
-      className: "fadein",
+      className: "zoom",
       hasCloseButton: true,
       content: "",
       title: null,
@@ -40,9 +39,6 @@
       var links = document.querySelectorAll(this.settings.linkSelector);
 
       for (var i = 0; i < links.length; i++) {
-        if (links[i].href) {
-          links[i].href = "#";
-        }
         links[i].addEventListener("click", function (e) {
           e.preventDefault();
           self.open();
@@ -52,12 +48,7 @@
   };
 
   Modal.prototype.open = function () {
-    if (this.isOpen === true) return;
-
-    this.isOpen = true;
-
     buildModal.call(this);
-
     initializeEvents.call(this);
 
     // For animations
@@ -65,19 +56,27 @@
 
     this.modal.className += this.modal.offsetHeight > window.innerHeight ?
       " modal-active modal-anchored" : " modal-active";
-    this.overlay.className += " modal-active";
+    if (this.overlay) {
+      this.overlay.className += " modal-active";
+    }
   };
-  Modal.prototype.close = function () {
-    this.isOpen = false;
 
+  Modal.prototype.close = function () {
     var self = this;
 
-    this.modal.className = this.modal.className.replace(" modal-open", "");
-    this.overlay.className = this.overlay.className.replace(" modal-open", "");
+    this.modal.className = this.modal.className.replace(" modal-active", "");
 
-    this.modal.addEventListener(transitionEnd(), removeElement.bind(null, this.modal));
+    this.modal.addEventListener(transitionEnd(), function () {
+      removeElement(self.modal);
+    });
 
-    this.overlay.addEventListener(transitionEnd(), removeElement.bind(null, this.overlay));
+    if (this.overlay) {
+      this.overlay.className = this.overlay.className.replace(" modal-active", "");
+
+      this.overlay.addEventListener(transitionEnd(), function () {
+        removeElement(self.overlay);
+      });
+    }
   }
 
   function buildModal () {

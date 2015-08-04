@@ -3,7 +3,7 @@
   display: block;
   position: inline;
   float: left;
-  padding: 0 8px;
+  padding: 0;
   transition: background 0.5s ease-in-out;
   -moz-transition: background 0.5s ease-in-out;
   -webkit-transition: background 0.5s ease-in-out;
@@ -37,7 +37,7 @@
 
 
 .drop_down a {
+  padding: 0 8px;
   display: block;
-  width: 100%;
   height: 100%;
 }
