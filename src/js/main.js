@@ -10,12 +10,14 @@ require('./modal.js');
 
 window.onload = function () {
   var loginModal = new Modal({
-    "content": document.getElementById("login_menu"),
-    "linkSelector": ".trigger-login"
+    title: "Login to LyreFly",
+    content: document.getElementById("login_menu"),
+    linkSelector: ".trigger-login"
   });
 
   var registerModal = new Modal({
-    "content": document.getElementById("register_menu"),
-    "linkSelector": ".trigger-register"
+    title: "Register an Account on LyreFly",
+    content: document.getElementById("register_menu"),
+    linkSelector: ".trigger-register"
   });
 }

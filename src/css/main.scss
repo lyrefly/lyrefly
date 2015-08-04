@@ -100,6 +100,29 @@
 	min-height: 500px;
 }
 
+.box {
+	background: #fff;
+	width: 100%;
+	float: left;
+	padding: 5px;
+	min-height: 150px;
+
+	margin-bottom: 5px;
+	text-align: center;
+}
+
+.box img {
+	max-width: 100%;
+	margin: 0;
+	display: block;
+}
+
+.col {
+	padding: 0 1%;
+	width: 31%;
+	float: left;
+}
+
 .clearfix {
 	height: 1px;
 	float: left;
