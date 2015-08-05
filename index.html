@@ -20,38 +20,46 @@
 
 <body>
 <div id="header">
-  <h1><a href="/">Lyre<strong>fly</strong></a></h1>
-  <form action="/search" method="get" class="left">
-    <input type="text" name="q" placeholder="Search..." class="search" />
-    <button><i class="fa fa-search"></i></button>
-  </form>
-  <div class="drop_down">
-    <a href="/login.html" class="trigger-login">Login</a>
-    <div class="drop_down_menu" id="login_menu">
-      <form action="/login.html" method="post">
-        <br /><input type="text" name="username" placeholder="Username or Email" />
-        <br /><input type="password" name="password" placeholder="Password" />
-        <input type="text" class="invisible" name="captcha" placeholder="captcha" />
-        <br /><button>Login</button>
-      </form>
+  <div class="container">
+    <h1><a href="/">Lyre<strong>fly</strong></a></h1>
+    <form action="/search" method="get" class="left">
+      <input type="text" name="q" placeholder="Search..." class="search" />
+      <button class="search"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="drop_down">
+      <a href="/login.html" class="trigger-login">Login</a>
+      <div class="drop_down_menu" id="login_menu">
+        <form action="/login.html" method="post">
+          <br /><input type="text" name="username" placeholder="Username or Email" />
+          <br /><input type="password" name="password" placeholder="Password" />
+          <input type="text" class="invisible" name="captcha" placeholder="captcha" />
+          <br /><button>Login</button>
+        </form>
+      </div>
     </div>
-  </div>
-  <div class="drop_down">
-    <a href="/register.html" class="trigger-register">Register</a>
-    <div class="drop_down_menu" id="register_menu">
-      <form action="/register.html" method="post">
-        <input type="text" name="username" placeholder="Username" />
-        <br /><input type="text" name="email" placeholder="Email" />
-        <br /><input type="password" name="password" placeholder="Password" />
-        <br /><input type="password" name="password2" placeholder="Verify Password" />
-        <input type="text" class="invisible" name="captcha" placeholder="captcha" />
-        <br /><button>Register</button>
-      </form>
+    <div class="drop_down">
+      <a href="/register.html" class="trigger-register">Register</a>
+      <div class="drop_down_menu" id="register_menu">
+        <form action="/register.html" method="post">
+          <input type="text" name="username" placeholder="Username" />
+          <br /><input type="text" name="email" placeholder="Email" />
+          <br /><input type="password" name="password" placeholder="Password" />
+          <br /><input type="password" name="password2" placeholder="Verify Password" />
+          <input type="text" class="invisible" name="captcha" placeholder="captcha" />
+          <br /><button>Register</button>
+        </form>
+      </div>
     </div>
   </div>
 </div>
 <div class="container">
   <div class="row">
+    <div class="col-2 right">
+      <div class="box">
+        Lyrefly loves all artists
+      </div>
+    </div>
+
     <div class="col-2">
       <div class="art box">
         <img src="/img/placeholder.jpg" />
@@ -73,12 +81,6 @@
       </div>
       <div class="art box">
         <img src="/img/placeholder.jpg" />
-      </div>
-    </div>
-
-    <div class="col-2">
-      <div class="box">
-        Lyrefly loves all artists
       </div>
     </div>
   </div>
