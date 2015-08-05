@@ -26,19 +26,10 @@
       <input type="text" name="q" placeholder="Search..." class="search" />
       <button class="search"><i class="fa fa-search"></i></button>
     </form>
-    <div class="drop_down">
-      <a href="/login.html" class="trigger-login">Login</a>
-      <div class="drop_down_menu" id="login_menu">
-        <form action="/login.html" method="post">
-          <br /><input type="text" name="username" placeholder="Username or Email" />
-          <br /><input type="password" name="password" placeholder="Password" />
-          <input type="text" class="invisible" name="captcha" placeholder="captcha" />
-          <br /><button>Login</button>
-        </form>
-      </div>
-    </div>
-    <div class="drop_down">
-      <a href="/register.html" class="trigger-register">Register</a>
+    <div class="drop_down right">
+      <a href="/register.html" class="trigger-register">
+        <i class="fa fa-user-plus"></i> Register
+      </a>
       <div class="drop_down_menu" id="register_menu">
         <form action="/register.html" method="post">
           <input type="text" name="username" placeholder="Username" />
@@ -47,6 +38,19 @@
           <br /><input type="password" name="password2" placeholder="Verify Password" />
           <input type="text" class="invisible" name="captcha" placeholder="captcha" />
           <br /><button>Register</button>
+        </form>
+      </div>
+    </div>
+    <div class="drop_down right">
+      <a href="/login.html" class="trigger-login">
+        <i class="fa fa-sign-in"></i> Login
+      </a>
+      <div class="drop_down_menu" id="login_menu">
+        <form action="/login.html" method="post">
+          <br /><input type="text" name="username" placeholder="Username or Email" />
+          <br /><input type="password" name="password" placeholder="Password" />
+          <input type="text" class="invisible" name="captcha" placeholder="captcha" />
+          <br /><button>Login</button>
         </form>
       </div>
     </div>

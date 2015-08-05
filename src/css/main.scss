@@ -63,6 +63,11 @@
 	margin-left: -31px;
 }
 
+#header > a, #header .drop_down > a {
+	padding: 0 8px;
+	display: block;
+	height: 100%;
+}
 
 #header h1 {
 	font-weight: normal;
@@ -72,7 +77,7 @@
 	color: #fff;
 	font-family: Allerta;
 	text-transform: lowercase;
-	margin: 0 5px;
+	margin: 0;
 	padding: 0;
 	font-size: 25px;
 	letter-spacing: 0.5px;
