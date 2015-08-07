@@ -152,3 +152,15 @@
 	float: left;
 	clear: both;
 }
+
+@media all and (max-width:800px) {
+	.fixed, .box.fixed {
+		position: relative;
+	}
+}
+
+@media all and (max-width:650px) {
+	#header input.search {
+		width: 250px;
+	}
+}
