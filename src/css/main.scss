@@ -1,3 +1,13 @@
+.fixed {
+	position: fixed;
+	width: inherit;
+	box-sizing: border-box;
+}
+
+.box.fixed {
+	width: inherit;
+}
+
 .fadein {
 	-webkit-animation: fadein 1s;
 	-moz-animation: fadein 1s;
