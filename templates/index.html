@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="row">
+  <div class="col-2 right">
+    <div class="box fixed">
+      Lyrefly loves all artists
+    </div>
+  </div>
+
+  <div class="col-2">
+    <div class="art box">
+      <img src="{{ url_for('static', filename='img/placeholder.jpg') }}" />
+    </div>
+    <div class="art box">
+      <img src="{{ url_for('static', filename='img/horse.jpg') }}" />
+    </div>
+    <div class="art box">
+      <img src="{{ url_for('static', filename='img/placeholder.jpg') }}" />
+    </div>
+  </div>
+
+  <div class="col-2">
+    <div class="art box">
+      <img src="{{ url_for('static', filename='img/man.jpg') }}" />
+    </div>
+    <div class="art box">
+      <img src="{{ url_for('static', filename='img/horse.jpg') }}" />
+    </div>
+    <div class="art box">
+      <img src="{{ url_for('static', filename='img/placeholder.jpg') }}" />
+    </div>
+  </div>
+</div>
+{% endblock %}

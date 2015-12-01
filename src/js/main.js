@@ -1,14 +1,3 @@
-import React from "react";
-require('../css/animations.scss');
-require('../css/global.scss');
-require('../css/grid.scss');
-require('../css/main.scss');
-require('../css/modal.scss');
-require('../css/dropdown.scss');
-
-require('./functions.js');
-require('./modal.js');
-
 window.onload = function () {
   var loginModal = new Modal({
     title: "Login to LyreFly",

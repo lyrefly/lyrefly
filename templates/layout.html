@@ -11,7 +11,9 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
   <link href='//fonts.googleapis.com/css?family=Allerta' rel='stylesheet' type='text/css' />
 
-  <script src="js/app.js"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.min.css') }}" />
+
+  <script src="{{ url_for('static', filename='js/all.min.js') }}"></script>
 
   <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -27,11 +29,11 @@
       <button class="search"><i class="fa fa-search"></i></button>
     </form>
     <div class="drop_down right">
-      <a href="/register.html" class="trigger-register">
+      <a href="/register" class="trigger-register">
         <i class="fa fa-key"></i> Register
       </a>
       <div class="drop_down_menu" id="register_menu">
-        <form action="/register.html" method="post">
+        <form action="/register" method="post">
           <input type="text" name="username" placeholder="Username" />
           <br /><input type="text" name="email" placeholder="Email" />
           <br /><input type="password" name="password" placeholder="Password" />
@@ -42,11 +44,11 @@
       </div>
     </div>
     <div class="drop_down right">
-      <a href="/login.html" class="trigger-login">
+      <a href="/login" class="trigger-login">
         <i class="fa fa-sign-in"></i> Login
       </a>
       <div class="drop_down_menu" id="login_menu">
-        <form action="/login.html" method="post">
+        <form action="/login" method="post">
           <br /><input type="text" name="username" placeholder="Username or Email" />
           <br /><input type="password" name="password" placeholder="Password" />
           <input type="text" class="invisible" name="captcha" placeholder="captcha" />
@@ -57,37 +59,10 @@
   </div>
 </div>
 <div class="container">
-  <div class="row">
-    <div class="col-2 right">
-      <div class="box fixed">
-        Lyrefly loves all artists
-      </div>
-    </div>
-
-    <div class="col-2">
-      <div class="art box">
-        <img src="/img/placeholder.jpg" />
-      </div>
-      <div class="art box">
-        <img src="/img/horse.jpg" />
-      </div>
-      <div class="art box">
-        <img src="/img/placeholder.jpg" />
-      </div>
-    </div>
-
-    <div class="col-2">
-      <div class="art box">
-        <img src="/img/man.jpg" />
-      </div>
-      <div class="art box">
-        <img src="/img/horse.jpg" />
-      </div>
-      <div class="art box">
-        <img src="/img/placeholder.jpg" />
-      </div>
-    </div>
-  </div>
+  {% for message in get_flashed_messages() %}
+    <div class=flash>{{ message }}</div>
+  {% endfor %}
+  {% block body %}{% endblock %}
 </div>
 <div class="clearfix"></div>
 </body>
