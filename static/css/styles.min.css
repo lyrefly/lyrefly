@@ -375,12 +375,14 @@ button:focus, input[type="submit"]:focus {
   -moz-animation-name: glowpulse;
   -webkit-animation-name: glowpulse;
   animation-name: glowpulse;
-  -moz-animation-duration: 3s;
-  -webkit-animation-duration: 3s;
-  animation-duration: 3s;
-  -moz-animation-iteration-count: infinite;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
+  /*
+	-moz-animation-duration: 3s;
+	-webkit-animation-duration: 3s;
+	animation-duration: 3s;
+	-moz-animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+	*/
   text-shadow: -1px 1px 8px #ECEB72, 1px -1px 8px #fff; }
 
 .box {

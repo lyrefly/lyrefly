@@ -4,31 +4,24 @@
   <div class="col-2 right">
     <div class="box fixed">
       Lyrefly loves all artists
+      {% include "forms/login.html" %}
     </div>
   </div>
 
-  <div class="col-2">
+  <div class="col-2 art-col">
+  {% for image in images.even %}
     <div class="art box">
-      <img src="{{ url_for('static', filename='img/placeholder.jpg') }}" />
+      <img src="{{ url_for('static', filename='uploads/' + image) }}" />
     </div>
-    <div class="art box">
-      <img src="{{ url_for('static', filename='img/horse.jpg') }}" />
-    </div>
-    <div class="art box">
-      <img src="{{ url_for('static', filename='img/placeholder.jpg') }}" />
-    </div>
+  {% endfor %}
   </div>
 
-  <div class="col-2">
+  <div class="col-2 art-col">
+  {% for image in images.odd %}
     <div class="art box">
-      <img src="{{ url_for('static', filename='img/man.jpg') }}" />
+      <img src="{{ url_for('static', filename='uploads/' + image) }}" />
     </div>
-    <div class="art box">
-      <img src="{{ url_for('static', filename='img/horse.jpg') }}" />
-    </div>
-    <div class="art box">
-      <img src="{{ url_for('static', filename='img/placeholder.jpg') }}" />
-    </div>
+  {% endfor %}
   </div>
 </div>
 {% endblock %}
