@@ -8,6 +8,14 @@ from flask import Flask, request, session, g, redirect, url_for, abort, render_t
 app = Flask(__name__, static_url_path='/static')
 app.config.from_object(project_config)
 
+@app.before_request
+def before_request():
+    return
+
+@app.teardown_request
+def teardown_request(exception):
+    return 
+
 @app.route("/")
 def home():
     images = []
