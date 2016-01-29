@@ -1,7 +1,8 @@
 import config.config as project_config
 import calendar, time
+import Image
+import os
 
-from os import listdir
 from os.path import isfile, join
 from flask import Flask, request, session, g, redirect, url_for, abort, render_template, flash
 
@@ -14,13 +15,13 @@ def before_request():
 
 @app.teardown_request
 def teardown_request(exception):
-    return 
+    return
 
 @app.route("/")
 def home():
     images = []
-    for f in listdir("static/uploads/"):
-        if isfile(join("static/uploads/", f)):
+    for f in os.listdir(join(app.config['UPLOAD_FOLDER'], "650/")):
+        if isfile(join(app.config['UPLOAD_FOLDER'], "650/", f)):
             images.append(f)
     image_data = {}
     image_data['even'] = images[::2]
@@ -56,11 +57,27 @@ def submit():
 def submit_post():
     data = request.files['file']
     if data:
-        data.save("static/uploads/" + str(calendar.timegm(time.gmtime())) + "_" + data.filename)
+        filename = str(calendar.timegm(time.gmtime())) + "_" + data.filename
+        path = join(app.config['UPLOAD_FOLDER'], filename)
+        data.save(path)
+        make_thumb(filename, 650)
         flash("Uploaded: " + data.filename)
     else:
         flash("No file uploaded! ")
     return render_template("submit.html")
+
+def make_thumb(name, size):
+    dimensions = size, size
+    thumb_dir = join(app.config['UPLOAD_FOLDER'], str(size))
+    if not os.path.exists(thumb_dir):
+        os.makedirs(thumb_dir)
+
+    try:
+        img = Image.open(join(app.config['UPLOAD_FOLDER'], name))
+        img.thumbnail(dimensions)
+        img.save(join(thumb_dir, name))
+    except IOError:
+        print("Thumbnail generation failed!")
 
 if __name__ == "__main__":
     app.run()
