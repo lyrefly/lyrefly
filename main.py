@@ -1,28 +1,25 @@
 import config.config as project_config
+
+# Import the Flask Framework
+from flask import Flask
 import calendar, time
-import Image
+from PIL import Image
 import os
+app = Flask(__name__)
+# Note: We don't need to call run() since our application is embedded within
+# the App Engine WSGI application server.
 
 from os.path import isfile, join
 from flask import Flask, request, session, g, redirect, url_for, abort, render_template, flash
 
-app = Flask(__name__, static_url_path='/static')
 app.config.from_object(project_config)
-
-@app.before_request
-def before_request():
-    return
-
-@app.teardown_request
-def teardown_request(exception):
-    return
 
 @app.route("/")
 def home():
     images = []
-    for f in os.listdir(join(app.config['UPLOAD_FOLDER'], "650/")):
+    """for f in os.listdir(join(app.config['UPLOAD_FOLDER'], "650/")):
         if isfile(join(app.config['UPLOAD_FOLDER'], "650/", f)):
-            images.append(f)
+            images.append(f)"""
     image_data = {}
     image_data['even'] = images[::2]
     image_data['odd'] = images[1::2]
@@ -58,9 +55,6 @@ def submit_post():
     data = request.files['file']
     if data:
         filename = str(calendar.timegm(time.gmtime())) + "_" + data.filename
-        path = join(app.config['UPLOAD_FOLDER'], filename)
-        data.save(path)
-        make_thumb(filename, 650)
         flash("Uploaded: " + data.filename)
     else:
         flash("No file uploaded! ")
@@ -68,16 +62,15 @@ def submit_post():
 
 def make_thumb(name, size):
     dimensions = size, size
-    thumb_dir = join(app.config['UPLOAD_FOLDER'], str(size))
-    if not os.path.exists(thumb_dir):
-        os.makedirs(thumb_dir)
 
-    try:
-        img = Image.open(join(app.config['UPLOAD_FOLDER'], name))
-        img.thumbnail(dimensions)
-        img.save(join(thumb_dir, name))
-    except IOError:
-        print("Thumbnail generation failed!")
 
-if __name__ == "__main__":
-    app.run()
+@app.errorhandler(404)
+def page_not_found(e):
+    """Return a custom 404 error."""
+    return 'Sorry, Nothing at this URL.', 404
+
+
+@app.errorhandler(500)
+def application_error(e):
+    """Return a custom 500 error."""
+    return 'Sorry, unexpected error: {}'.format(e), 500

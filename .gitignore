@@ -1,5 +1,4 @@
-*.log
-node_modules
-config/config.py
-static/uploads/*
 *.pyc
+# don't include third-party dependencies.
+!lib/README.md
+.DS_Store
