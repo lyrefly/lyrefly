@@ -2,11 +2,13 @@
 {% block body %}
 <div class="row">
   <div class="col-2 right">
+  {% if not username %}
     <div class="box fixed">
       Lyrefly loves all artists
       {% include "forms/login.html" %}
     </div>
   </div>
+  {% endif %}
 
   <div class="col-2 art-col">
   {% for image in images.even %}

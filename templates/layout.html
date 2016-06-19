@@ -33,6 +33,7 @@
         <i class="fa fa-key"></i> Upload
       </a>
     </div>
+    {% if not username %}
     <div class="drop_down right">
       <a href="/register" class="trigger-register">
         <i class="fa fa-key"></i> Register
@@ -41,13 +42,22 @@
         {% include "forms/register.html" %}
       </div>
     </div>
+    {% endif %}
     <div class="drop_down right">
+      {% if username %}
+      <a href="/logout">
+        <i class="fa fa-user"></i> {{ username }}
+      </a>
+      <div class="drop_down_menu" id="user_menu"></div>
+      </div>
+      {% else %}
       <a href="/login" class="trigger-login">
-        <i class="fa fa-sign-in"></i> Login
+        <i class="fa fa-user"></i> Login
       </a>
       <div class="drop_down_menu" id="login_menu">
         {% include "forms/login.html" %}
       </div>
+      {% endif %}
     </div>
   </div>
 </div>
