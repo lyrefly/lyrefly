@@ -10,6 +10,8 @@ import datetime
 from base64 import b64encode
 from py2casefold import casefold
 
+import logging
+# logging.info("hello")
 
 # Note: We don't need to call run() since our application is embedded within
 # the App Engine WSGI application server.
@@ -18,7 +20,7 @@ from os.path import isfile, join
 from flask import Flask, request, session, g, redirect, url_for, abort, render_template, flash, make_response
 
 app = Flask(__name__)
-app.config.from_object('config')
+app.config.from_pyfile('config.py')
 
 @app.route("/")
 def home():
